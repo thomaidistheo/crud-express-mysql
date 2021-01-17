@@ -15,6 +15,7 @@ conn.connect(function(err) {
 module.exports = conn;
 </code>
 
+<br>
 then create a table in the MySQL database:
 
 <code>
