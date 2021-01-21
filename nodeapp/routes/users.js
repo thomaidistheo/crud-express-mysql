@@ -5,6 +5,9 @@ var db=require('../database');
 router.get('/form', function(req, res, next) { 
 res.render('users'); 
 });
+// router.get('/edit', function(req, res, next) { 
+// res.render('user-edit/users/edit/<%=data.id%>'); 
+// });
 
 
 // ^ INSERT DATA INTO THE TABLE

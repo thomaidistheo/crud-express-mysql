@@ -37,6 +37,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 50px;
 }
 
 button {
@@ -95,6 +96,7 @@ input {
 
 <!-- ==== form section start====-->
 <div class="container">
+   
     <div class="user-detail">
         <h2>Create User Data</h2>
         <form action="/users/create" method="POST">
@@ -108,31 +110,39 @@ input {
               <input type="text" placeholder="Enter Full Country" name="country" required>
               <button class="submit-btn" type="submit">Submit</button>
         </form>
-    
-         <div class="btn-section">
-            <a style="text-decoration: none; color: darkblue;" href="user-list">
+            <div class="btn-section">
+                <a href="/users/user-list">
+                    <button class="btn-back"> back to user list </button>
+                </a>
+            </div>
+    </div>
+    <!--====form section start====-->
+    <div class="user-detail">
+        <h2>Edit User Data</h2>
+        <form action="<%=(typeof editData!='undefined')?'/users/edit/'+editData.id:'/users/create'%>" method="POST">
+            <label>Full Name</label>
+            <input type="text" placeholder="Enter Full Name" name="fullName" required value="<%=(typeof editData!='undefined')? editData.fullName:''%>">
+            <label>Email Address</label>
+            <input type="email" placeholder="Enter Email Address" name="emailAddress" required value="<%=(typeof editData!='undefined')? editData.emailAddress:''%>">
+            <label>City</label>
+            <input type="city" placeholder="Enter Full City" name="city" required value="<%=(typeof editData!='undefined')? editData.city:''%>">
+            <label>Country</label>
+            <input type="text" placeholder="Enter Full Country" name="country" required value="<%=(typeof editData!='undefined')? editData.country:''%>">
+            <button class="submit-btn" type="submit">Submit</button>
+        </form>
+        <div class="btn-section">
+            <a href="/users/user-list">
                 <button class="btn-back"> back to user list </button>
             </a>
-         </div>
+        </div>
     </div>
 </div>
-<!--==== form section end ==== -->
+<!--====form section start====-->
 
-<!--====form section start====-->
-<!-- <div class="user-detail">
-    <h2>Edit User Data</h2>
-    <form action="<%=(typeof editData!='undefined')?'/users/edit/'+editData.id:'/users/create'%>" method="POST">
-          <label>Full Name</label>
-          <input type="text" placeholder="Enter Full Name" name="fullName" required value="<%=(typeof editData!='undefined')? editData.fullName:''%>">
-          <label>Email Address</label>
-          <input type="email" placeholder="Enter Email Address" name="emailAddress" required value="<%=(typeof editData!='undefined')? editData.emailAddress:''%>">
-          <label>City</label>
-          <input type="city" placeholder="Enter Full City" name="city" required value="<%=(typeof editData!='undefined')? editData.city:''%>">
-          <label>Country</label>
-          <input type="text" placeholder="Enter Full Country" name="country" required value="<%=(typeof editData!='undefined')? editData.country:''%>">
-          <button type="submit">Submit</button>
-    </div>
-</div> -->
-<!--====form section start====-->
+</div>
+<!--==== form section end ==== -->
+    
+
+
 </body>
 </html>
