@@ -2,14 +2,14 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="/nodeapp/views/style.css">
+<link href="/css/form-style.css" rel="stylesheet" type="text/css">
+
 </head>
 
 <body>
 
-<style>
-
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;400;700&display=swap');
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;400;700&display=swap');
 * {
     box-sizing: border-box;
     padding: 0;
@@ -90,35 +90,12 @@ input {
     padding: 10px 0;
     margin-top: 20px;
 }
-
-</style>
-
-
+    </style>
 <!-- ==== form section start====-->
 <div class="container">
-   
-    <div class="user-detail">
-        <h2>Create User Data</h2>
-        <form action="/users/create" method="POST">
-              <label>Full Name</label>
-              <input type="text" placeholder="Enter Full Name" name="fullName" required>
-              <label>Email Address</label>
-              <input type="email" placeholder="Enter Email Address" name="emailAddress" required>
-              <label>City</label>
-              <input type="city" placeholder="Enter Full City" name="city" required>
-              <label>Country</label>
-              <input type="text" placeholder="Enter Full Country" name="country" required>
-              <button class="submit-btn" type="submit">Submit</button>
-        </form>
-            <div class="btn-section">
-                <a href="/users/user-list">
-                    <button class="btn-back"> back to user list </button>
-                </a>
-            </div>
-    </div>
     <!--====form section start====-->
     <div class="user-detail">
-        <h2>Edit User Data</h2>
+        <h2>User Data</h2>
         <form action="<%=(typeof editData!='undefined')?'/users/edit/'+editData.id:'/users/create'%>" method="POST">
             <label>Full Name</label>
             <input type="text" placeholder="Enter Full Name" name="fullName" required value="<%=(typeof editData!='undefined')? editData.fullName:''%>">
